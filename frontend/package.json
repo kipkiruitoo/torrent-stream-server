@@ -16,6 +16,7 @@
         "bootstrap": "^5.1.1",
         "classnames": "^2.3.1",
         "common-stuff": "^1.5.2",
+        "if-node-version": "^1.1.1",
         "ismobilejs": "^1.1.1",
         "node-sass": "^6.0.1",
         "react": "^17.0.2",
@@ -30,13 +31,13 @@
         "react-toastify": "^8.0.3",
         "reactn": "^2.2.7",
         "timeago.js": "^4.0.2",
+        "torrent-stream-server": "file:..",
         "typescript": "~4.4.3",
-        "video.js": "^7.15.4",
-        "if-node-version": "^1.1.1"
+        "video.js": "^7.15.4"
     },
     "scripts": {
         "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
-        "build": "if-node-version '>= 17' && SKIP_PREFLIGHT_CHECK=true react-scripts --openssl-legacy-provider build || SKIP_PREFLIGHT_CHECK=true react-scripts build",
+        "build": "if-node-version '>= 17' && cross-env  SKIP_PREFLIGHT_CHECK=true react-scripts --openssl-legacy-provider build || cross-env  SKIP_PREFLIGHT_CHECK=true react-scripts build",
         "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
     },
     "eslintConfig": {
@@ -60,5 +61,8 @@
     "prettier": {
         "semi": false,
         "singleQuote": true
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3"
     }
 }
